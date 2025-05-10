@@ -12,3 +12,10 @@ Actualmente, hay dos complementos oficiales disponibles:
 ## Ampliando la configuración de ESLint
 
 Si estás desarrollando una aplicación de producción, recomendamos usar TypeScript con reglas de lint conscientes de tipos habilitadas. Consulta la [plantilla de TS](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) para obtener información sobre cómo integrar TypeScript y [`typescript-eslint`](https://typescript-eslint.io) en tu proyecto.
+
+## Temas estudió
+
+### Actualización - 10 de mayo
+
+El sábado 10 de mayo se estudió el consumo de API. Se añadió el componente correspondiente para realizar llamadas y manejar datos provenientes de servicios externos. Además, se implementaron las siguientes características: 
+
