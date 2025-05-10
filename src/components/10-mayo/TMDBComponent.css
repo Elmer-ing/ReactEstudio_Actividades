@@ -1,0 +1,92 @@
+.tmdb-component {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.tmdb-component__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.tmdb-component__search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tmdb-component__input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.tmdb-component__button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tmdb-component__button:hover {
+    background-color: #0056b3;
+}
+
+.tmdb-component__results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.tmdb-component__movie {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tmdb-component__movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.tmdb-component__movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tmdb-component__no-poster {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.tmdb-component__movie-overview {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.tmdb-component__no-results {
+    font-size: 1rem;
+    color: #888;
+    text-align: center;
+}
