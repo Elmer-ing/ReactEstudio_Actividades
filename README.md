@@ -17,5 +17,8 @@ Si estás desarrollando una aplicación de producción, recomendamos usar TypeSc
 
 ### Actualización - 10 de mayo
 
-El sábado 10 de mayo se estudió el consumo de API. Se añadió el componente correspondiente para realizar llamadas y manejar datos provenientes de servicios externos. Además, se implementaron las siguientes características: 
+El sábado 10 de mayo se estudió el consumo de API. Se añadió el componente correspondiente para realizar llamadas y manejar datos provenientes de servicios externos.
 
+El API usada fue: The Movie Database (TMDB)
+
+Además, se añadió contenido (2 componentes) referente a la clase del pasado sábado 3 de mayo, donde se usaron otras APIs, 
