@@ -19,6 +19,8 @@ Si estás desarrollando una aplicación de producción, recomendamos usar TypeSc
 
 El sábado 10 de mayo se estudió el consumo de API. Se añadió el componente correspondiente para realizar llamadas y manejar datos provenientes de servicios externos.
 
-### actualización - 11 de mayo
+### Actualización - 11 de mayo
 
-El domingo 11 de mayo, durante de desarrollo de los puntos 1 y 2, se hizo un repaso de los Hooks (useEffet y useState), queda pendiente (useContext), aún no se comprende la forma de implementar.
+El domingo 11 de mayo, durante de desarrollo de los puntos 1 y 2 (actividad/taller sobre Hooks), se hizo un repaso de los Hooks (useEffet y useState), consulta de a una api (con clave), queda pendiente (useContext), aún no se comprende la forma de implementar.
+
+*nota:* La consulta (get) se hizo mediante la librería axios.
