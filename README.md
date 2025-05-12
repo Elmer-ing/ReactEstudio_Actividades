@@ -19,6 +19,6 @@ Si estás desarrollando una aplicación de producción, recomendamos usar TypeSc
 
 El sábado 10 de mayo se estudió el consumo de API. Se añadió el componente correspondiente para realizar llamadas y manejar datos provenientes de servicios externos.
 
-El API usada fue: The Movie Database (TMDB)
+### actualización - 11 de mayo
 
-Además, se añadió contenido (2 componentes) referente a la clase del pasado sábado 3 de mayo, donde se usaron otras APIs, 
+El domingo 11 de mayo, durante de desarrollo de los puntos 1 y 2, se hizo un repaso de los Hooks (useEffet y useState), queda pendiente (useContext), aún no se comprende la forma de implementar.
