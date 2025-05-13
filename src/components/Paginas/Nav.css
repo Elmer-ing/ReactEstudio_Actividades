@@ -1,5 +1,6 @@
 /* Estilos para la navegación */
 .Nav {
+  background-color: var(--tema-claro);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -33,9 +34,10 @@
   background-color: var(--color-azul-muy-claro); /* Reemplaza #fce7f3 */
 }
 
-
-
 .oscuro {
+  & .Nav{
+    background-color: var(--tema-oscuro);
+  } 
   
   &.Nav-lista__item {
     color: var(--color-azul-claro);

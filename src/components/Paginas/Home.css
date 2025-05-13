@@ -18,9 +18,36 @@
   margin: 0;
 }
 
+.boton-tema {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de tema */
+}
+
+/* Estilos adicionales para el botón (hover, focus, etc.) */
+.boton-tema:hover {
+  opacity: 0.8;
+}
+
+.boton-tema:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 .home-tablero {
   border-radius: 0.5rem;
-  margin: 1.5rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.oscuro {
+  /* Estilos del botón para el tema oscuro */
+  & .boton-tema {
+    background-color: #333;
+    color: #f0f0f0;
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useContext } from 'react';
 import Inicio from '../WikiEstudio/Inicio';
 import GithubUserSearch from '../03-mayo/GithubUserSearch';
 import CurrencyConverter from '../03-mayo/CurrencyConverter';
@@ -9,6 +10,8 @@ import FormularioContacto from '../act-hooks-11-mayo/FormularioContacto';
 
 import './Home.css'
 import './Nav.css'
+
+import { temaContexto } from '../../App'; //aqui se importa el contexto global
 
 function Home () {
 
@@ -41,17 +44,21 @@ function Home () {
         },
     }
 
+    const { tema, setTema } = useContext(temaContexto); // Aqui se desesctrurctura el objeto
+
+    const cambiarTema = () => {
+        setTema(tema === 'oscuro' ? '' : 'oscuro');
+      };
+
     return (
-        <div className='home'>
+        <div className={`home ${tema}`}>
             <div className='home-baner'>
                 <p className='home-baner__titluto'>
                     ESTUDIO Y ACTIVIDADES
                 </p>
-                <div>
-                    <p>
-                        boton: modo oscuro
-                    </p>
-                </div>
+                <button onClick={cambiarTema} className='boton-tema'>
+                    Cambia a modo {tema === 'oscuro' ? 'claro' : 'oscuro'}
+                </button>
             </div>
             <Navegacion
                 paginas={paguinas}
