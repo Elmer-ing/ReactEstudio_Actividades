@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './CurrencyConverter.css';
 
 function CurrencyConverter() {
   const [currencies, setCurrencies] = useState([]);
@@ -7,13 +8,21 @@ function CurrencyConverter() {
   const [amount, setAmount] = useState(1);
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Obtener lista de monedas al cargar
   useEffect(() => {
+    setLoading(true);
     fetch('https://api.frankfurter.app/currencies')
       .then(res => res.json())
-      .then(data => setCurrencies(Object.keys(data)))
-      .catch(() => setError('Error al cargar monedas.'));
+      .then(data => {
+        setCurrencies(Object.keys(data));
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Error al cargar monedas.');
+        setLoading(false);
+      });
   }, []);
 
   const handleConvert = () => {
@@ -22,56 +31,103 @@ function CurrencyConverter() {
       setResult(null);
       return;
     }
-
+    
+    setLoading(true);
     fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${from}&to=${to}`)
       .then(res => res.json())
       .then(data => {
         setResult(data.rates[to]);
         setError('');
+        setLoading(false);
       })
       .catch(() => {
         setError('Error al obtener la tasa de cambio.');
         setResult(null);
+        setLoading(false);
       });
   };
 
   return (
-    <div style={{ maxWidth: '400px', padding: '1rem' }}>
-      <h2>Conversor de divisas</h2>
-      <div style={{ marginBottom: '1rem' }}>
-        <input
-          type="number"
-          min="0"
-          value={amount}
-          onChange={e => setAmount(e.target.value)}
-          style={{ width: '100%', marginBottom: '0.5rem', padding: '0.5rem' }}
-        />
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <select value={from} onChange={e => setFrom(e.target.value)} style={{ flex: 1 }}>
-            {currencies.map(cur => (
-              <option key={cur} value={cur}>
-                {cur}
-              </option>
-            ))}
-          </select>
-          <select value={to} onChange={e => setTo(e.target.value)} style={{ flex: 1 }}>
-            {currencies.map(cur => (
-              <option key={cur} value={cur}>
-                {cur}
-              </option>
-            ))}
-          </select>
+    <div className="conversor">
+      <h2 className="conversor__titulo">Conversor de Divisas</h2>
+      
+      <div className="conversor__formulario">
+        <div className="conversor__grupo-campo">
+          <label htmlFor="cantidad" className="conversor__etiqueta">Cantidad</label>
+          <input
+            id="cantidad"
+            type="number"
+            min="0"
+            value={amount}
+            onChange={e => setAmount(e.target.value)}
+            className="conversor__entrada"
+            placeholder="Ingresa la cantidad"
+          />
         </div>
-        <button onClick={handleConvert} style={{ marginTop: '1rem', padding: '0.5rem 1rem' }}>
-          Convertir
+        
+        <div className="conversor__contenedor-selects">
+          <div className="conversor__grupo-campo">
+            <label htmlFor="moneda-origen" className="conversor__etiqueta">De</label>
+            <select
+              id="moneda-origen"
+              value={from}
+              onChange={e => setFrom(e.target.value)}
+              className="conversor__select"
+              disabled={loading || currencies.length === 0}
+            >
+              {currencies.map(cur => (
+                <option key={`from-${cur}`} value={cur}>
+                  {cur}
+                </option>
+              ))}
+            </select>
+          </div>
+          
+          <div className="conversor__icono-cambio">↔️</div>
+          
+          <div className="conversor__grupo-campo">
+            <label htmlFor="moneda-destino" className="conversor__etiqueta">A</label>
+            <select
+              id="moneda-destino"
+              value={to}
+              onChange={e => setTo(e.target.value)}
+              className="conversor__select"
+              disabled={loading || currencies.length === 0}
+            >
+              {currencies.map(cur => (
+                <option key={`to-${cur}`} value={cur}>
+                  {cur}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        
+        <button 
+          onClick={handleConvert} 
+          className="conversor__boton"
+          disabled={loading}
+        >
+          {loading ? 'Calculando...' : 'Convertir'}
         </button>
       </div>
-
-      {error && <p style={{ color: 'red' }}>⚠️ {error}</p>}
+      
+      {error && (
+        <div className="conversor__error">
+          <span className="conversor__icono-error">⚠️</span> 
+          {error}
+        </div>
+      )}
+      
       {result && (
-        <p>
-          💱 {amount} {from} = <strong>{result.toFixed(2)} {to}</strong>
-        </p>
+        <div className="conversor__resultado">
+          <div className="conversor__icono-resultado">💱</div>
+          <div className="conversor__texto-resultado">
+            <span className="conversor__valor-origen">{amount} {from}</span>
+            <span className="conversor__simbolo-igual">=</span>
+            <span className="conversor__valor-destino">{result.toFixed(2)} {to}</span>
+          </div>
+        </div>
       )}
     </div>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './GithubUserSearch.css';
 
 function GithubUserSearch() {
   // Estado para almacenar la consulta de búsqueda
@@ -54,31 +55,53 @@ function GithubUserSearch() {
   }, [query]); // Ejecutar el efecto cuando cambie la consulta
 
   return (
-    <div style={{ padding: '1rem' }}>
-      <h2>Buscar usuarios en GitHub</h2>
+    <div className="buscador-github">
+      <h2 className="buscador-github__titulo">Buscar usuarios en GitHub</h2>
+      
       {/* Campo de entrada para la consulta de búsqueda */}
-      <input
-        type="text"
-        placeholder="Escribe al menos 3 caracteres"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        style={{ padding: '0.5rem', width: '100%', maxWidth: '300px' }}
-      />
-
+      <div className="buscador-github__contenedor-entrada">
+        <input
+          type="text"
+          className="buscador-github__entrada"
+          placeholder="Escribe al menos 3 caracteres"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+        />
+      </div>
+      
       {/* Mostrar mensaje de carga si está buscando */}
-      {loading && <p>Cargando...</p>}
-
+      {loading && <p className="buscador-github__cargando">Cargando resultados...</p>}
+      
       {/* Lista de resultados */}
-      <ul style={{ marginTop: '1rem' }}>
-        {results.map(user => (
-          <li key={user.id} style={{ marginBottom: '0.5rem' }}>
-            {/* Mostrar avatar del usuario */}
-            <img src={user.avatar_url} alt={user.login} width={30} style={{ marginRight: '8px' }} />
-            {/* Enlace al perfil del usuario */}
-            <a href={user.html_url} target="_blank" rel="noopener noreferrer">{user.login}</a>
-          </li>
-        ))}
-      </ul>
+      {results.length > 0 && (
+        <ul className="buscador-github__lista">
+          {results.map(user => (
+            <li key={user.id} className="buscador-github__elemento">
+              <div className="buscador-github__usuario">
+                {/* Mostrar avatar del usuario */}
+                <img 
+                  src={user.avatar_url} 
+                  alt={`Avatar de ${user.login}`} 
+                  className="buscador-github__avatar" 
+                />
+                {/* Enlace al perfil del usuario */}
+                <a 
+                  href={user.html_url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="buscador-github__enlace"
+                >
+                  {user.login}
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+      
+      {query.length >= 3 && results.length === 0 && !loading && (
+        <p className="buscador-github__sin-resultados">No se encontraron usuarios</p>
+      )}
     </div>
   );
 }

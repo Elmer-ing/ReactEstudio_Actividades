@@ -1,0 +1,213 @@
+/* Estilos para el contenedor principal del conversor */
+.conversor {
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(30, 136, 229, 0.2); /* Reemplaza var(--sombra-suave) */
+}
+
+/* Título del conversor */
+.conversor__titulo {
+  color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Contenedor del formulario */
+.conversor__formulario {
+  background-color: var(--color-texto-claro);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(30, 136, 229, 0.2); /* Reemplaza var(--sombra-suave) */
+}
+
+/* Grupo para cada campo de entrada */
+.conversor__grupo-campo {
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+/* Etiquetas para los campos */
+.conversor__etiqueta {
+  display: block;
+  color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* Campo de entrada numérica */
+.conversor__entrada {
+  width: 90%;
+  padding: 12px 15px;
+  border: 2px solid var(--color-borde); /* Se mantiene igual (es azul) */
+  border-radius: 25px;
+  font-size: 1rem;
+  color: var(--color-texto-oscuro);
+  background-color: var(--color-texto-claro);
+  transition: var(--transicion);
+}
+
+.conversor__entrada:focus {
+  outline: none;
+  border-color: var(--color-azul-primario); /* Reemplaza var(--color-rosa-primario) */
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.3); /* Reemplaza el color de la sombra */
+}
+
+/* Contenedor para los selects de monedas */
+.conversor__contenedor-selects {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Icono entre los selects */
+.conversor__icono-cambio {
+  margin-top: 25px;
+  font-size: 1.2rem;
+}
+
+/* Selects para elegir monedas */
+.conversor__select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--color-borde); /* Se mantiene igual (es azul) */
+  border-radius: 25px;
+  font-size: 1rem;
+  color: var(--color-texto-oscuro);
+  background-color: #fff;
+  transition: var(--transicion);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e88e5' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E"); /* Reemplaza el color del icono */
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  cursor: pointer;
+}
+
+.conversor__select:focus {
+  outline: none;
+  border-color: var(--color-azul-primario); /* Reemplaza var(--color-rosa-primario) */
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.3); /* Reemplaza el color de la sombra */
+}
+
+.conversor__select:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Botón de conversión */
+.conversor__boton {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-azul-primario); /* Reemplaza var(--color-rosa-primario) */
+  color: var(--color-texto-claro);
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.conversor__boton:hover:not(:disabled) {
+  background-color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
+  transform: translateY(-2px);
+}
+
+.conversor__boton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.conversor__boton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Mensaje de error */
+.conversor__error {
+  color: #d32f2f; /* Un rojo estándar para errores */
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.conversor__icono-error {
+  font-size: 1.2rem;
+}
+
+/* Contenedor del resultado */
+.conversor__resultado {
+  border: 2px dashed var(--color-azul-secundario); /* Reemplaza var(--color-rosa-secundario) */
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.conversor__icono-resultado {
+  font-size: 1.8rem;
+}
+
+.conversor__texto-resultado {
+  display: flex;
+  flex-direction: column;
+}
+
+.conversor__valor-origen {
+  color: var(--color-texto-oscuro);
+  font-size: 1rem;
+}
+
+.conversor__simbolo-igual {
+  color: var(--color-texto-primario); /* Reemplaza var(--color-rosa-primario) */
+  margin: 3px 0;
+  font-weight: bold;
+}
+
+.conversor__valor-destino {
+  color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 480px) {
+  .conversor {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .conversor__titulo {
+    font-size: 1.5rem;
+  }
+
+  .conversor__contenedor-selects {
+    flex-direction: column;
+  }
+
+  .conversor__icono-cambio {
+    margin: 0;
+    transform: rotate(90deg);
+  }
+
+  .conversor__entrada,
+  .conversor__select,
+  .conversor__boton {
+    padding: 10px;
+  }
+}

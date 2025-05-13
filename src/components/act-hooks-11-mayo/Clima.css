@@ -1,14 +1,13 @@
 .clima {
-    width: 100vw;
-    height: 100vh;
+    width: 90%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    /* background: linear-gradient(135deg, #4facfe, #00f2fe); */
-    color: #000000;
+    color: var(--color-texto-oscuro); /* Mantiene el color del texto oscuro o elige otro azul oscuro */
     padding: 20px;
     text-align: center;
 }
@@ -17,10 +16,11 @@
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--color-texto-oscuro); /* Un azul oscuro para el título */
 }
 
 .clima__error {
-    color: #ff4d4d;
+    color: #ff4d4d; /* Se mantiene rojo para indicar error */
     font-size: 1.2rem;
     margin-bottom: 20px;
     font-weight: bold;
@@ -30,10 +30,11 @@
     font-size: 1.5rem;
     margin-top: 20px;
     animation: fadeIn 1.5s infinite;
+    color: var(--color-texto-oscuro);
 }
 
 .clima__detalles {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Un fondo blanco translúcido se ve bien con azules */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -47,11 +48,13 @@
     font-size: 1.2rem;
     margin: 10px 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: var(--color-texto-oscuro); /* Mantiene el color del texto oscuro o elige un azul más oscuro */
 }
 
 .clima__temperatura {
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--color-azul-oscuro); /* Un azul oscuro para la temperatura */
 }
 
 /* Animación para el texto de carga */
