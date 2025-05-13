@@ -9,6 +9,8 @@
   --color-borde: #64b5f6;       /* Un tono de azul para los bordes */
   --sombra-suave: 0 2px 10px rgba(30, 136, 229, 0.2); /* Sombra azulada suave */
   --transicion: all 0.3s ease;
+  --tema-oscuro: #242424;
+  --tema-claro: #fff;
 }
 
 #root {
@@ -16,6 +18,15 @@
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+.oscuro {
+  background-color: var(--tema-oscuro);
+  color: var(--color-texto-claro);
+}
+.claro {
+  background-color: var(--tema-claro);
+  color: var(--color-texto-oscuro);
 }
 
 /* .logo {

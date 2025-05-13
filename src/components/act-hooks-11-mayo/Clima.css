@@ -7,7 +7,6 @@
     justify-content: center;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    color: var(--color-texto-oscuro); /* Mantiene el color del texto oscuro o elige otro azul oscuro */
     padding: 20px;
     text-align: center;
 }
@@ -16,7 +15,6 @@
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    color: var(--color-texto-oscuro); /* Un azul oscuro para el título */
 }
 
 .clima__error {
@@ -30,7 +28,6 @@
     font-size: 1.5rem;
     margin-top: 20px;
     animation: fadeIn 1.5s infinite;
-    color: var(--color-texto-oscuro);
 }
 
 .clima__detalles {
@@ -48,13 +45,11 @@
     font-size: 1.2rem;
     margin: 10px 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    color: var(--color-texto-oscuro); /* Mantiene el color del texto oscuro o elige un azul más oscuro */
 }
 
 .clima__temperatura {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--color-azul-oscuro); /* Un azul oscuro para la temperatura */
 }
 
 /* Animación para el texto de carga */

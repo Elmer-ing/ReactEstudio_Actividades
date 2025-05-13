@@ -9,7 +9,6 @@
 
 /* Título del conversor */
 .conversor__titulo {
-  color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
   font-size: 1.8rem;
   margin-bottom: 20px;
   text-align: center;
@@ -18,7 +17,6 @@
 
 /* Contenedor del formulario */
 .conversor__formulario {
-  background-color: var(--color-texto-claro);
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 15px;
@@ -34,7 +32,6 @@
 /* Etiquetas para los campos */
 .conversor__etiqueta {
   display: block;
-  color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
   font-weight: 600;
   margin-bottom: 6px;
   font-size: 0.9rem;
@@ -47,8 +44,6 @@
   border: 2px solid var(--color-borde); /* Se mantiene igual (es azul) */
   border-radius: 25px;
   font-size: 1rem;
-  color: var(--color-texto-oscuro);
-  background-color: var(--color-texto-claro);
   transition: var(--transicion);
 }
 
@@ -79,8 +74,6 @@
   border: 2px solid var(--color-borde); /* Se mantiene igual (es azul) */
   border-radius: 25px;
   font-size: 1rem;
-  color: var(--color-texto-oscuro);
-  background-color: #fff;
   transition: var(--transicion);
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e88e5' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E"); /* Reemplaza el color del icono */
@@ -92,11 +85,10 @@
 .conversor__select:focus {
   outline: none;
   border-color: var(--color-azul-primario); /* Reemplaza var(--color-rosa-primario) */
-  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.3); /* Reemplaza el color de la sombra */
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.3); 
 }
 
 .conversor__select:disabled {
-  background-color: #f5f5f5;
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -107,7 +99,6 @@
   width: 100%;
   padding: 12px;
   background-color: var(--color-azul-primario); /* Reemplaza var(--color-rosa-primario) */
-  color: var(--color-texto-claro);
   border: none;
   border-radius: 25px;
   font-size: 1rem;
@@ -119,7 +110,7 @@
 }
 
 .conversor__boton:hover:not(:disabled) {
-  background-color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
+  background-color: var(--color-texto-oscuro); /* --------------------------- */
   transform: translateY(-2px);
 }
 
@@ -169,18 +160,15 @@
 }
 
 .conversor__valor-origen {
-  color: var(--color-texto-oscuro);
   font-size: 1rem;
 }
 
 .conversor__simbolo-igual {
-  color: var(--color-texto-primario); /* Reemplaza var(--color-rosa-primario) */
   margin: 3px 0;
   font-weight: bold;
 }
 
 .conversor__valor-destino {
-  color: var(--color-texto-oscuro); /* Reemplaza var(--color-rosa-oscuro) */
   font-size: 1.3rem;
   font-weight: 700;
 }
