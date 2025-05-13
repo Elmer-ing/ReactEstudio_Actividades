@@ -1,0 +1,95 @@
+/* Estilos para el componente Inicio con metodología BEM */
+.inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: var(--color-texto-claro); /* Reemplaza #fff */
+  border-radius: 0.5rem;
+}
+
+.inicio__contenido {
+  flex: 1;
+}
+
+.inicio__titulo {
+  color: var(--color-azul-oscuro); /* Reemplaza #be185d */
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-azul-claro); /* Reemplaza #fbcfe8 */
+  padding-bottom: 0.5rem;
+}
+
+.inicio__parrafo {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563; /* Se mantiene igual si contrasta bien con el fondo azul claro */
+  margin-bottom: 1.5rem;
+}
+
+.inicio__parrafo strong {
+  color: var(--color-azul-oscuro); /* Reemplaza #be185d */
+  font-weight: 600;
+}
+
+.inicio__imagen-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.inicio__imagen {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: var(--sombra-suave); /* Usamos la sombra azulada */
+  border: 3px solid var(--color-azul-muy-claro); /* Reemplaza #fce7f3 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inicio__imagen:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 8px rgba(30, 136, 229, 0.15); /* Sombra azulada al hacer hover */
+}
+
+/* Estilos para modo oscuro */
+.modo-oscuro .inicio {
+  background-color: transparent;
+}
+
+.modo-oscuro .inicio__titulo {
+  color: var(--color-azul-claro); /* Reemplaza #f9a8d4 con un azul claro */
+  border-bottom-color: var(--color-azul-muy-oscuro); /* Un tono más oscuro del azul principal */
+}
+
+.modo-oscuro .inicio__parrafo {
+  color: #e5e7eb; /* Se mantiene igual si contrasta bien con el fondo oscuro */
+}
+
+.modo-oscuro .inicio__parrafo strong {
+  color: var(--color-azul-claro); /* Reemplaza #f9a8d4 con un azul claro */
+}
+
+.modo-oscuro .inicio__imagen {
+  border-color: var(--color-azul-muy-oscuro); /* Un tono más oscuro del azul principal */
+  box-shadow: 0 4px 6px rgba(30, 136, 229, 0.3); /* Sombra azulada en modo oscuro */
+}
+
+/* Media queries para responsividad */
+@media (min-width: 768px) {
+  .inicio {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .inicio__contenido {
+    flex: 2;
+    padding-right: 2rem;
+  }
+
+  .inicio__imagen-contenedor {
+    flex: 1;
+    margin-top: 0;
+  }
+}
