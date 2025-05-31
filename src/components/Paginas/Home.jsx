@@ -7,6 +7,7 @@ import CurrencyConverter from '../03-mayo/CurrencyConverter';
 import TMDBComponent from '../10-mayo/TMDBComponent';
 import Clima from '../act-hooks-11-mayo/Clima';
 import FormularioContacto from '../act-hooks-11-mayo/FormularioContacto';
+import Contador from '../31-05/Contador';
 
 import './Home.css'
 import './Nav.css'
@@ -42,6 +43,10 @@ function Home () {
             nombre: "Formulario sencillo",
             Component: <FormularioContacto/>
         },
+        7:{
+            nombre: "Contador",
+            Component: <Contador/>
+        }
     }
 
     const { tema, setTema } = useContext(temaContexto); // Aqui se desesctrurctura el objeto
