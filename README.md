@@ -25,6 +25,8 @@ El domingo 11 de mayo, durante de desarrollo de los puntos 1 y 2 (actividad/tall
 
 _nota:_ La consulta (get) se hizo mediante la librería axios.
 
+Se pudo implementar el Hook useContext para cambiar el tema de la web.
+
 ---
 
 ## Componentes implementados
