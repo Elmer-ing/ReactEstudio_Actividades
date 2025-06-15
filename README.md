@@ -1,6 +1,6 @@
 # Estuidio de react
 
-Es + Vitete proyecto es una recopilación de los conceptos aprendidos en clase.
+Este proyecto es una recopilación de los conceptos aprendidos en clase.
 
 Esta plantilla proporciona una configuración mínima para que React funcione en Vite con HMR y algunas reglas de ESLint.
 
