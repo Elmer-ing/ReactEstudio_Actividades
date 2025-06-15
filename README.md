@@ -23,4 +23,24 @@ El sábado 10 de mayo se estudió el consumo de API. Se añadió el componente c
 
 El domingo 11 de mayo, durante de desarrollo de los puntos 1 y 2 (actividad/taller sobre Hooks), se hizo un repaso de los Hooks (useEffet y useState), consulta de a una api (con clave), queda pendiente (useContext), aún no se comprende la forma de implementar.
 
-*nota:* La consulta (get) se hizo mediante la librería axios.
+_nota:_ La consulta (get) se hizo mediante la librería axios.
+
+---
+
+## Componentes implementados
+
+- **Conversor de Divisas:** Permite convertir entre diferentes monedas usando la API de Frankfurter. Incluye manejo de errores, estados de carga y pruebas automatizadas.
+- **Buscador de Usuarios de GitHub:** Permite buscar usuarios de GitHub por nombre, mostrando avatar y enlace al perfil. Incluye debounce, manejo de estados y pruebas automatizadas.
+- **Buscador de Películas (TMDB):** Permite buscar películas usando la API de TMDB, mostrando título, póster, fecha de estreno, valoración y descripción. Incluye manejo de errores, estados de carga y pruebas automatizadas.
+
+## Pruebas automatizadas
+
+Se implementaron pruebas unitarias para los componentes principales usando Vitest y Testing Library, cubriendo los flujos de búsqueda, conversión y manejo de errores en cada componente.
+
+## 🙌 Agradecimientos
+
+Quiero expresar un especial agradecimiento al profesor Walner Palacios por su entrega, dedicación y compromiso con la docencia.
+
+Su acompañamiento durante el proceso de aprendizaje fue fundamental, no solo por los conocimientos compartidos, sino por su disposición constante a resolver dudas y motivar a los estudiantes a dar lo mejor de sí mismos.
+
+Gracias profe por su vocación y por guiarnos en este camino del desarrollo web.
